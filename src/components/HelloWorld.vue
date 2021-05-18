@@ -1,61 +1,74 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa" target="_blank" rel="noopener">pwa</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript" target="_blank" rel="noopener">typescript</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="helloapp">
+    
+    <!-- <video autoplay muted loop id="myVideo">
+      <source src="./roadster-loop-imperial.mp4" type="video/mp4">
+    </video> -->
+
+    <iframe id = "myVideo"
+    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FNowThisNews%2Fvideos%2F1360468794338159%2F&mute=0" 
+      width="560" 
+      height="314" 
+      style="border:none;overflow:hidden" 
+      scrolling="no" 
+      autoplay="true"
+      mute = "false"
+      frameborder="0" 
+      allowfullscreen="true" 
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" >
+    </iframe>
+
+    <div class="content">
+      <h1>Heading</h1>
+      <p>Lorem ipsum...</p>
+      <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+    
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+<script>
+export default {
+  name: 'HelloWorld',
+  components : {
+  },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+<style scoped>
+#myVideo {
+  position: fixed;
+  top: 15%;
+  right: 15%;
+  bottom: 15%;
+  min-width: 70%;
+  min-height: 70%;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.content {
+  position: fixed;
+  top: 45%;
+  right: 15%;
+  bottom: 15%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 70%;
+  padding: 20px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
 }
-a {
-  color: #42b983;
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
 }
 </style>
